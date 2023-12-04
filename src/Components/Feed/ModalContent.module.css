@@ -1,0 +1,85 @@
+.modalbox {
+  display: grid;
+  grid-template-columns: 36rem 20rem;
+  grid-template-rows: auto 1fr auto;
+  background-color: white;
+
+  margin: auto;
+  height: 36rem;
+  animation: scaleUp 0.3s forwards;
+  overflow: hidden;
+  border-radius: 0.2rem;
+  cursor: pointer;
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: initial;
+    transform: initial;
+  }
+}
+
+.modalimg {
+  grid-row: 1/4;
+}
+
+.modalcontent {
+  padding: 0 1rem 0 2rem;
+  
+}
+
+.statscontainer {
+  display: grid;
+}
+.userstats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem 0 0;
+  opacity: 0.5;
+}
+
+.author:hover {
+  text-decoration: underline;
+}
+.views::before {
+  content: "";
+  width: 16px;
+  height: 10px;
+  background: url("../../Assets/visualizacao-black.svg") no-repeat;
+  margin-right: 0.5rem;
+  display: inline-block;
+}
+
+.animalinfo span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-right: 2rem;
+
+  &::before {
+    content: "";
+    height: 1.1rem;
+    margin-right: 0.5rem;
+    width: 2px;
+    background-color: black;
+    display: inline-block;
+  }
+}
+
+@media (max-width: 64rem) {
+  .modalbox {
+    height: auto;
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+    grid-template-columns: minmax(20rem, 40rem);
+  }
+
+  .modalimg {
+    grid-row: 1;
+  }
+}
